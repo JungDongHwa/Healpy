@@ -19,19 +19,18 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.exercise_main);
 
-            exercise1Btn = (Button)findViewById(R.id.exeicise1Btn);
-            exercise2Btn = (Button)findViewById(R.id.exeicise2Btn);
-            exercise3Btn = (Button)findViewById(R.id.exeicise3Btn);
-
+            exercise1Btn = (Button)findViewById(R.id.exercise1Btn);
+            exercise2Btn = (Button)findViewById(R.id.exercise2Btn);
+            exercise3Btn = (Button)findViewById(R.id.exercise3Btn);
 
 //            exercise1Btn.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(ExerciseMenuActivity.this, );
-//                    intent.putExtra("exerciseType", 1);
-//                    startActivity(intent);
-//                }
-//            });
+////                @Override
+////                public void onClick(View v) {
+////                    Intent intent = new Intent(ExerciseMenuActivity.this, );
+////                    intent.putExtra("exerciseType", 1);
+////                    startActivity(intent);
+////                }
+////            });
 //            exercise2Btn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {

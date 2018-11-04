@@ -7,7 +7,7 @@
     tools:layout_editor_absoluteY="25dp">
 
     <Button
-        android:id="@+id/exeicise1Btn"
+        android:id="@+id/exercise1Btn"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/exeicise2Btn"
+        android:id="@+id/exercise2Btn"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
@@ -32,10 +32,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exeicise1Btn" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise1Btn" />
 
     <Button
-        android:id="@+id/exeicise3Btn"
+        android:id="@+id/exercise3Btn"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
@@ -46,5 +46,5 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exeicise2Btn" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise2Btn" />
 </android.support.constraint.ConstraintLayout>

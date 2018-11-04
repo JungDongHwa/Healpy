@@ -1,5 +1,6 @@
 package org.kitsoft.healpy.myapplication;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.kitsoft.healpy.myapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,22 +45,29 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         View view = navigationView.getHeaderView(0);
 
+        View C_view = findViewById(R.id.contentHome);
+
         nameTextView = (TextView)view.findViewById(R.id.header_name_textView);
         emailTextView = (TextView)view.findViewById(R.id.header_email_textView);
 
         nameTextView.setText(auth.getCurrentUser().getDisplayName());
         emailTextView.setText(auth.getCurrentUser().getEmail());
 
-        exerciseBtn = (Button)view.findViewById(R.id.exeicise1Btn);
-        reportBtn = (Button)view.findViewById(R.id.reportBtn);
+        exerciseBtn = (Button)C_view.findViewById(R.id.exerciseBtn);
+        reportBtn = (Button)C_view.findViewById(R.id.reportBtn);
 
-//        exerciseBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, )
-//            }
-//        });
-
+        exerciseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(HomeActivity.this, ExerciseMenuActivity.class);
+                    startActivity(intent);
+                }
+                catch(NullPointerException ex) {
+                    Toast.makeText(HomeActivity.this, "NullPoint", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
