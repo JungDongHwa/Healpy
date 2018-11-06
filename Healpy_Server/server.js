@@ -1,8 +1,6 @@
 'use strict';
 
 // const googleStorage = require('./FirebaseDownloadImages');
-//const realtimeDatabase = require('./RealtimeDatabase');
-//const jsonfile = require('./JsonFile');
 
 // const bucketName = 'happy-d02bd.appspot.com';
 // const srcFilename = 'COCO_val2014_000000000241.jpg';
@@ -12,15 +10,10 @@
 
 // firebase.downloadFile(bucketName, srcFilename, destFilename);
 
-// const body = jsonfile.readFile('COCO_val2014_000000000459_keypoints.json');
-// console.log(body);
-//realtimeDatabase.addTodoItem("u1", "Go to the bank", "Wed Aug 30 2017 02:25:06 GMT+0800 (HKT)");
-//var item = realtimeDatabase.readToDoItem("-LP7BQeQknXoOndXgWjE");
+const PushUp = require('./Exercise');
+const uploadResult = require('./UploadResult');
+const pushUp = new PushUp();
 
-//console.log(item);
-
-const pushUp = require('./Angle');
-const pushup = new pushUp();
-
-var result = pushup.calculateAngle();
+var result = pushUp.analyze();
+uploadResult(2, 20181105, "PullUp", result);
 console.log(result);
