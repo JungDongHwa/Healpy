@@ -737,13 +737,14 @@ public class Camera2VideoFragment extends Fragment
             long minutes = (duration - hours * 3600) / 60;
             long seconds = duration - (hours * 3600 + minutes * 60);
 
-            Log.d("전체 영상길이: ",""+seconds+"초");
+            Log.d("전체 영상길이: ", "" + seconds + "초");
             StorageReference storageRef = FirebaseStorage.getInstance().getReference();
-            for(int i =0; i<seconds;i++){
+            for(int i = 0; i < seconds; i++){
                 Bitmap bitmap = mediaMetadataRetriever.getFrameAtTime(i*1000000);
-                SaveBitmapToJPG(bitmap,mNextVideoAbsolutePath,"bitmap"+i+".jpg");
+                SaveBitmapToJPG(bitmap, mNextVideoAbsolutePath, "bitmap" + i + ".jpg");
+                
                 if(i == seconds/2){
-                    Uri file = Uri.fromFile(new File(mNextVideoAbsolutePath+"bitmap"+i+".jpg"));
+                    Uri file = Uri.fromFile(new File(mNextVideoAbsolutePath + "bitmap" + i + ".jpg"));
                     StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
                     UploadTask uploadTask = riversRef.putFile(file);
 
@@ -756,9 +757,7 @@ public class Camera2VideoFragment extends Fragment
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
                             upload_check = true;
-
                         }
                     });
                 }
