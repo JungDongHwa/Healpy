@@ -17,24 +17,13 @@ const LElbowY = body[19];
 const LWristX = body[21];
 const LWristY = body[22];
 
-class Angle {
-    constructor() {
+function calculateAngle(x1, y1, x2, y2) {
+    let result = (Math.atan2(y1, x1) / Math.atan2(y2, x2)) * 180 / Math.PI;
 
+    if (result < 0) {
+        result = - result;
     }
-
-    calculateAngle() {
-
-    }
+    return result;
 }
 
-module.exports = class pushUp extends Angle {
-    calculateAngle() {
-        var RElbowAngle = (Math.atan2((RShoulderY - RElbowY), (RShoulderX - RElbowX))
-                        /Math.atan2((RWristY - RElbowY), (RWristX - RElbowX))) * 180 / Math.PI;
-                        
-        if(RElbowAngle < 0)
-            RElbowAngle = -RElbowAngle;
-
-        return RElbowAngle;
-    }
-}
+module.exports = calculateAngle;

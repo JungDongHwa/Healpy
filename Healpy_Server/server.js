@@ -19,8 +19,14 @@
 
 //console.log(item);
 
-const pushUp = require('./Angle');
-const pushup = new pushUp();
+// const pushUp = require('./Angle');
+// const pushup = new pushUp();
 
-var result = pushup.calculateAngle();
-console.log(result);
+// var result = pushup.calculateAngle();
+// console.log(result);
+
+const generateThumbnail = require('./index');
+
+while(true) {
+    generateThumbnail.generateThumbnail();
+}
