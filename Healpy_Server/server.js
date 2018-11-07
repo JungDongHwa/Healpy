@@ -1,32 +1,20 @@
 'use strict';
 
-// const googleStorage = require('./FirebaseDownloadImages');
-//const realtimeDatabase = require('./RealtimeDatabase');
-//const jsonfile = require('./JsonFile');
+const firebase = require('firebase');
 
-// const bucketName = 'happy-d02bd.appspot.com';
-// const srcFilename = 'COCO_val2014_000000000241.jpg';
-// const destFilename = './public/images/COCO_val2014_000000000241.jpg';
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyDFhptBl8xiQDR2zuQOl2Ap4NLw1qO0h7M",
+authDomain: "happy-d02bd.firebaseapp.com",
+databaseURL: "https://happy-d02bd.firebaseio.com",
+projectId: "happy-d02bd",
+storageBucket: "happy-d02bd.appspot.com",
+messagingSenderId: "663932731539"
+};
 
-// const firebase = new googleStorage(bucketName, srcFilename, destFilename);
+firebase.initializeApp(config);
 
-// firebase.downloadFile(bucketName, srcFilename, destFilename);
-
-// const body = jsonfile.readFile('COCO_val2014_000000000459_keypoints.json');
-// console.log(body);
-//realtimeDatabase.addTodoItem("u1", "Go to the bank", "Wed Aug 30 2017 02:25:06 GMT+0800 (HKT)");
-//var item = realtimeDatabase.readToDoItem("-LP7BQeQknXoOndXgWjE");
-
-//console.log(item);
-
-// const pushUp = require('./Angle');
-// const pushup = new pushUp();
-
-// var result = pushup.calculateAngle();
-// console.log(result);
-
-const generateThumbnail = require('./index');
-
-while(true) {
-    generateThumbnail.generateThumbnail();
-}
+var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
+starCountRef.on('value', function(snapshot) {
+  updateStarCount(postElement, snapshot.val());
+});
