@@ -7,7 +7,7 @@ class DownloadImage {
         this.destFilename = destFilename;
     }
 
-    async downloadFile() {
+    downloadFile() {
         // [START storage_download_file]
         // Imports the Google Cloud client library
         const {Storage} = require('@google-cloud/storage');
@@ -28,7 +28,7 @@ class DownloadImage {
         };
 
         // Downloads the file
-        await storage
+        storage
             .bucket(this.bucketName)
             .file(this.srcFilename)
             .download(options);

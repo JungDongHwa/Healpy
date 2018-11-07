@@ -1,20 +1,16 @@
 'use strict';
 
-const firebase = require('firebase');
+const readUserInfo = require('./realtimeUrl');
 
-// Initialize Firebase
-var config = {
-apiKey: "AIzaSyDFhptBl8xiQDR2zuQOl2Ap4NLw1qO0h7M",
-authDomain: "happy-d02bd.firebaseapp.com",
-databaseURL: "https://happy-d02bd.firebaseio.com",
-projectId: "happy-d02bd",
-storageBucket: "happy-d02bd.appspot.com",
-messagingSenderId: "663932731539"
-};
+var value = readUserInfo.readUserInfo();
 
-firebase.initializeApp(config);
+console.log(value);
 
-var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-starCountRef.on('value', function(snapshot) {
-  updateStarCount(postElement, snapshot.val());
-});
+// const DownloadImage = require('./DownloadImages');
+// const srcFilename = `./${uid}/khuho.png`;
+// const destFilename = `./public/images/khuho.png`;
+// const bucketName = 'gs://happy-d02bd.appspot.com';
+
+// const downloadImage = new DownloadImage(bucketName, srcFilename, destFilename);
+
+// downloadImage.downloadFile();

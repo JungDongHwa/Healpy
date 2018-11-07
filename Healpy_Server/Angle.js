@@ -1,6 +1,6 @@
 'use strict';
 
-const jsonfile = require('./JsonFile');
+const jsonfile = require('./ReadJson');
 const body = jsonfile.readFile('COCO_val2014_000000000459_keypoints.json');
 
 const RShoulderX = body[6];
