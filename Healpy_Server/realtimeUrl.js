@@ -5,7 +5,11 @@ const DownloadImage = require('./DownloadImages');
 
 ref.on('value', function(snapshot) {
     var userInfo = snapshot.val();
+    //userInfo[0] or userInfo[""+0] = 1
+    //userInfo[0].id = 
     var uid = userInfo[1].uid;
+    //실시간으로 데이터 =>여러명이 한번에 들어오면
+    
 
     const bucketName = 'gs://happy-d02bd.appspot.com';
     const srcFilename = `images/${uid}/khuho.png`;
@@ -13,6 +17,7 @@ ref.on('value', function(snapshot) {
 
     const downloadImage = new DownloadImage(bucketName, srcFilename, destFilename);    
     downloadImage.downloadFile();
+    
 
     console.log(userInfo);
 });
